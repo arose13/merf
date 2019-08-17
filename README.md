@@ -40,11 +40,11 @@ The MERF code is modelled after scikit-learn estimators.  To use, you instantiat
 
 For example:
 
-```
-> from merf import MERF
-> merf = MERF()
-> merf.fit(X_train, Z_train, clusters_train, y_train)
-> y_hat = merf.predict(X_test, Z_test, clusters_test)
+```python
+from merf import MERF
+merf = MERF()
+merf.fit(X_train, Z_train, clusters_train, y_train)
+y_hat = merf.predict(X_test, Z_test, clusters_test)
 ```
 
 Note that training is slow because the underlying expectation-maximization (EM) algorithm requires many calls to the random forest fit method. That being said, this implemtataion has early stopping which aborts the EM algorithm if the generalized log-likelihood (GLL) stops significantly improving.
